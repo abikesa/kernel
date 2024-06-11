@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Welcome to your Jupyter Book &#8212; My sample book</title>
+    <title>R &#8212; R</title>
   
   
   
@@ -57,12 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="next" title="Summary of Steps" href="markdown.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,8 +152,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="https://www.r-project.org/logo/Rlogo.png" class="logo__image only-light" alt="R - Home"/>
+    <script>document.write(`<img src="https://www.r-project.org/logo/Rlogo.png" class="logo__image only-dark" alt="R - Home"/>`);</script>
   
   
 </a></div>
@@ -176,14 +174,17 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Welcome to your Jupyter Book
+                    R
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Summary of Steps</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Step-by-Step Instructions for VSCode</a></li>
+
+
 </ul>
 
     </div>
@@ -356,7 +357,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -367,11 +370,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome to your Jupyter Book</h1>
+    <h1>R</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-instructions">Step-by-Step Instructions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-commands">Summary of Commands</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -381,20 +393,72 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-your-jupyter-book">
-<h1>Welcome to your Jupyter Book<a class="headerlink" href="#welcome-to-your-jupyter-book" title="Link to this heading">#</a></h1>
-<p>This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a> for more information.</p>
-<p>Check out the content pages bundled with this sample book to see more.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="r">
+<h1>R<a class="headerlink" href="#r" title="Link to this heading">#</a></h1>
+<iframe src="https://www.youtube.com/embed/MG1lZhixbS4" width="100%" height="200px"></iframe>
+<p>It looks like the <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> command is being run inside the R session, which won’t work. The <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">kernelspec</span> <span class="pre">list</span></code> command should be run in your terminal, not within the R console.</p>
+<section id="step-by-step-instructions">
+<h2>Step-by-Step Instructions<a class="headerlink" href="#step-by-step-instructions" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Register IRKernel in R</strong>:</p>
+<ul>
+<li><p>Open R from your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>R
+</pre></div>
+</div>
+</li>
+<li><p>Register the IRKernel:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Exit the R session</strong>:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">q</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Check available Jupyter kernels in your terminal</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>kernelspec<span class="w"> </span>list
+</pre></div>
+</div>
+</li>
+</ol>
+<p>This should show the list of installed Jupyter kernels, including the <code class="docutils literal notranslate"><span class="pre">ir</span></code> kernel for R.</p>
+</section>
+<section id="summary-of-commands">
+<h2>Summary of Commands<a class="headerlink" href="#summary-of-commands" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Open R and install the IRKernel</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>R
+</pre></div>
+</div>
+<p>Inside the R console:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">q</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Check Jupyter kernels in the terminal</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>kernelspec<span class="w"> </span>list
+</pre></div>
+</div>
+</li>
+</ol>
+<p>This should resolve your issue and confirm that the R kernel is registered and available in Jupyter.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Summary of Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html#step-by-step-commands">Step-by-Step Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Step-by-Step Instructions for VSCode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html#additional-steps-if-needed">Additional Steps if Needed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html#recap-of-key-commands">Recap of Key Commands</a></li>
 </ul>
 </div>
+<p>`</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -432,7 +496,7 @@ It does not go in-depth into any particular topic - check out <a class="referenc
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Markdown Files</p>
+        <p class="prev-next-title">Summary of Steps</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -443,6 +507,22 @@ It does not go in-depth into any particular topic - check out <a class="referenc
             
             
               
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-instructions">Step-by-Step Instructions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-commands">Summary of Commands</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
           <footer class="bd-footer-content">
@@ -452,7 +532,7 @@ It does not go in-depth into any particular topic - check out <a class="referenc
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By ADM
 </p>
 
   </div>

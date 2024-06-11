@@ -1,55 +1,93 @@
-# Markdown Files
+Here's a summary of the steps to configure the R kernel in VSCode on your MacBook Pro for easy reproducibility:
 
-Whether you write your book's content in Jupyter Notebooks (`.ipynb`) or
-in regular markdown files (`.md`), you'll write in the same flavor of markdown
-called **MyST Markdown**.
-This is a simple file to help you get started and show off some syntax.
+### Summary of Steps
 
-## What is MyST?
+1. **Install Prerequisites**
+    - Install Python 3 (if not already installed).
+    - Install R from [CRAN](https://cran.r-project.org/mirrors.html).
 
-MyST stands for "Markedly Structured Text". It
-is a slight variation on a flavor of markdown called "CommonMark" markdown,
-with small syntax extensions to allow you to write **roles** and **directives**
-in the Sphinx ecosystem.
+2. **Set Up a Virtual Environment**
+    ```bash
+    python3 -m venv ~/documents/athena/myenv
+    source ~/documents/athena/myenv/bin/activate
+    ```
 
-For more about MyST, see [the MyST Markdown Overview](https://jupyterbook.org/content/myst.html).
+3. **Install Jupyter and IRKernel**
+    ```bash
+    pip install jupyter jupyter-client
+    R -e "install.packages('IRkernel'); IRkernel::installspec(user = TRUE)"
+    ```
 
-## Sample Roles and Directives
+4. **Ensure R is in the PATH**
+    - Add R to your PATH in your `~/.zshrc`:
+    ```bash
+    echo 'export PATH=/usr/local/bin:$PATH' >> ~/.zshrc
+    source ~/.zshrc
+    ```
 
-Roles and directives are two of the most powerful tools in Jupyter Book. They
-are like functions, but written in a markup language. They both
-serve a similar purpose, but **roles are written in one line**, whereas
-**directives span many lines**. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.
+5. **Verify Kernel Installation**
+    ```bash
+    jupyter kernelspec list
+    ```
 
-Here is a "note" directive:
+6. **Install VSCode Extensions**
+    - Install the [Jupyter Extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter).
+    - Optionally, install the [R Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=REditorSupport.r).
 
-```{note}
-Here is a note
-```
+7. **Configure VSCode to Use the Jupyter Server**
+    - Open VSCode.
+    - Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`).
+    - Run `Jupyter: Select Interpreter to start Jupyter server` and select the Python interpreter from your virtual environment.
 
-It will be rendered in a special box when you build your book.
+8. **Open or Create a Jupyter Notebook**
+    - Open an existing `.ipynb` file or create a new one.
 
-Here is an inline directive to refer to a document: {doc}`markdown-notebooks`.
+9. **Select the R Kernel**
+    - Click on the kernel name at the top right corner of the notebook interface.
+    - Select the `R` kernel from the dropdown menu.
 
+### Step-by-Step Commands
 
-## Citations
+1. **Install Python 3 and R (if not already installed)**:
+    - Follow the installation instructions for Python 3 and R on your MacBook Pro.
 
-You can also cite references that are stored in a `bibtex` file. For example,
-the following syntax: `` {cite}`holdgraf_evidence_2014` `` will render like
-this: {cite}`holdgraf_evidence_2014`.
+2. **Set Up Virtual Environment**:
+    ```bash
+    python3 -m venv ~/documents/athena/myenv
+    source ~/documents/athena/myenv/bin/activate
+    ```
 
-Moreover, you can insert a bibliography into your page with this syntax:
-The `{bibliography}` directive must be used for all the `{cite}` roles to
-render properly.
-For example, if the references for your book are stored in `references.bib`,
-then the bibliography is inserted with:
+3. **Install Jupyter and IRKernel**:
+    ```bash
+    pip install jupyter jupyter-client
+    R -e "install.packages('IRkernel'); IRkernel::installspec(user = TRUE)"
+    ```
 
-```{bibliography}
-```
+4. **Add R to PATH**:
+    ```bash
+    echo 'export PATH=/usr/local/bin:$PATH' >> ~/.zshrc
+    source ~/.zshrc
+    ```
 
-## Learn more
+5. **Verify Kernel Installation**:
+    ```bash
+    jupyter kernelspec list
+    ```
 
-This is just a simple starter to get you started.
-You can learn a lot more at [jupyterbook.org](https://jupyterbook.org).
+6. **Install VSCode Extensions**:
+    - Open the Extensions view in VSCode (`Ctrl+Shift+X` or `Cmd+Shift+X`).
+    - Install the Jupyter Extension.
+    - Optionally, install the R Extension.
+
+7. **Configure Jupyter Server in VSCode**:
+    - Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`).
+    - Run `Jupyter: Select Interpreter to start Jupyter server` and select the Python interpreter from your virtual environment.
+
+8. **Open or Create a Jupyter Notebook**:
+    - Open an existing `.ipynb` file or create a new one in VSCode.
+
+9. **Select the R Kernel**:
+    - Click on the kernel name at the top right corner of the notebook interface.
+    - Select the `R` kernel from the dropdown menu.
+
+By following these summarized steps, you should be able to replicate the setup on your MacBook Pro successfully. If you encounter any issues or need further assistance, please let me know.

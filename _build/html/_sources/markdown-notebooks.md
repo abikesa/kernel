@@ -12,42 +12,59 @@ kernelspec:
   name: python3
 ---
 
-# Notebooks with MyST Markdown
+The command `Jupyter: Select Interpreter to start Jupyter server` is meant to be run inside VSCode's Command Palette, not in the terminal. Here's how to do it correctly:
 
-Jupyter Book also lets you write text-based notebooks using MyST Markdown.
-See [the Notebooks with MyST Markdown documentation](https://jupyterbook.org/file-types/myst-notebooks.html) for more detailed instructions.
-This page shows off a notebook written in MyST Markdown.
+### Step-by-Step Instructions for VSCode
 
-## An example cell
+1. **Open VSCode**:
+    - Launch VSCode from your applications or use the terminal by typing `code .` in your project directory if you have VSCode's command-line tools installed.
 
-With MyST Markdown, you can define code cells with a directive like so:
+2. **Open the Command Palette**:
+    - Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (Mac) to open the Command Palette in VSCode.
 
-```{code-cell}
-print(2 + 2)
-```
+3. **Run the Command**:
+    - Type `Jupyter: Select Interpreter to start Jupyter server` in the Command Palette and press `Enter`.
+    - This will allow you to select the Python interpreter associated with your virtual environment (e.g., `/Users/apollo/documents/athena/myenv/bin/python`).
 
-When your book is built, the contents of any `{code-cell}` blocks will be
-executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.
+### Additional Steps if Needed
 
-```{seealso}
-Jupyter Book uses [Jupytext](https://jupytext.readthedocs.io/en/latest/) to convert text-based files to notebooks, and can support [many other text-based notebook files](https://jupyterbook.org/file-types/jupytext.html).
-```
+#### Step 1: Verify Jupyter Extension is Installed
+1. **Go to the Extensions view**:
+    - Click the Extensions icon in the Activity Bar on the side of the window or press `Ctrl+Shift+X`.
 
-## Create a notebook with MyST Markdown
+2. **Search for "Jupyter"**:
+    - Ensure that the Jupyter extension by Microsoft is installed. If not, install it.
 
-MyST Markdown notebooks are defined by two things:
+#### Step 2: Select Jupyter Kernel
+1. **Open or Create a Jupyter Notebook**:
+    - Open an existing `.ipynb` file or create a new one in VSCode.
 
-1. YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
-   See the YAML at the top of this page for example.
-2. The presence of `{code-cell}` directives, which will be executed with your book.
+2. **Select the Kernel**:
+    - Click on the kernel name (e.g., "Python 3") at the top right corner of the notebook interface.
+    - A dropdown menu should appear. Select the `R` kernel from this list. If it does not appear, try restarting VSCode.
 
-That's all that is needed to get started!
+#### Step 3: Restart Jupyter Server
+1. **Open the Command Palette**:
+    - Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (Mac).
 
-## Quickly add YAML metadata for MyST Notebooks
+2. **Run the Command**:
+    - Type `Jupyter: Restart Jupyter server` and press `Enter`.
 
-If you have a markdown file and you'd like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:
+### Recap of Key Commands
 
-```
-jupyter-book myst init path/to/markdownfile.md
-```
+1. **Open Command Palette in VSCode**:
+    ```plaintext
+    Ctrl+Shift+P (Windows/Linux) or Cmd+Shift+P (Mac)
+    ```
+
+2. **Select Interpreter for Jupyter Server**:
+    ```plaintext
+    Jupyter: Select Interpreter to start Jupyter server
+    ```
+
+3. **Restart Jupyter Server**:
+    ```plaintext
+    Jupyter: Restart Jupyter server
+    ```
+
+These steps should help you correctly configure VSCode to recognize and use the R kernel in your Jupyter Notebooks. If you encounter any issues, please let me know.

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Notebooks with MyST Markdown &#8212; My sample book</title>
+    <title>Step-by-Step Instructions for VSCode &#8212; R</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'markdown-notebooks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Content with notebooks" href="notebooks.html" />
+    <link rel="prev" title="Kernel" href="notebooks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -150,8 +150,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="https://www.r-project.org/logo/Rlogo.png" class="logo__image only-light" alt="R - Home"/>
+    <script>document.write(`<img src="https://www.r-project.org/logo/Rlogo.png" class="logo__image only-dark" alt="R - Home"/>`);</script>
   
   
 </a></div>
@@ -172,14 +172,17 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    R
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Summary of Steps</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Kernel</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Step-by-Step Instructions for VSCode</a></li>
+
+
 </ul>
 
     </div>
@@ -365,7 +368,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Notebooks with MyST Markdown</h1>
+    <h1>Step-by-Step Instructions for VSCode</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -375,10 +378,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-cell">An example cell</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">Create a notebook with MyST Markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Step-by-Step Instructions for VSCode</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-steps-if-needed">Additional Steps if Needed</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-verify-jupyter-extension-is-installed">Step 1: Verify Jupyter Extension is Installed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-select-jupyter-kernel">Step 2: Select Jupyter Kernel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-restart-jupyter-server">Step 3: Restart Jupyter Server</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-of-key-commands">Recap of Key Commands</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -389,51 +398,97 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="notebooks-with-myst-markdown">
-<h1>Notebooks with MyST Markdown<a class="headerlink" href="#notebooks-with-myst-markdown" title="Link to this heading">#</a></h1>
-<p>Jupyter Book also lets you write text-based notebooks using MyST Markdown.
-See <a class="reference external" href="https://jupyterbook.org/file-types/myst-notebooks.html">the Notebooks with MyST Markdown documentation</a> for more detailed instructions.
-This page shows off a notebook written in MyST Markdown.</p>
-<section id="an-example-cell">
-<h2>An example cell<a class="headerlink" href="#an-example-cell" title="Link to this heading">#</a></h2>
-<p>With MyST Markdown, you can define code cells with a directive like so:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
-</div>
-</div>
-</div>
-<p>When your book is built, the contents of any <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> blocks will be
-executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Jupyter Book uses <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/">Jupytext</a> to convert text-based files to notebooks, and can support <a class="reference external" href="https://jupyterbook.org/file-types/jupytext.html">many other text-based notebook files</a>.</p>
-</div>
-</section>
-<section id="create-a-notebook-with-myst-markdown">
-<h2>Create a notebook with MyST Markdown<a class="headerlink" href="#create-a-notebook-with-myst-markdown" title="Link to this heading">#</a></h2>
-<p>MyST Markdown notebooks are defined by two things:</p>
+  <p>The command <code class="docutils literal notranslate"><span class="pre">Jupyter:</span> <span class="pre">Select</span> <span class="pre">Interpreter</span> <span class="pre">to</span> <span class="pre">start</span> <span class="pre">Jupyter</span> <span class="pre">server</span></code> is meant to be run inside VSCode’s Command Palette, not in the terminal. Here’s how to do it correctly:</p>
+<section id="step-by-step-instructions-for-vscode">
+<h1>Step-by-Step Instructions for VSCode<a class="headerlink" href="#step-by-step-instructions-for-vscode" title="Link to this heading">#</a></h1>
 <ol class="arabic simple">
-<li><p>YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
-See the YAML at the top of this page for example.</p></li>
-<li><p>The presence of <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> directives, which will be executed with your book.</p></li>
+<li><p><strong>Open VSCode</strong>:</p>
+<ul class="simple">
+<li><p>Launch VSCode from your applications or use the terminal by typing <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">.</span></code> in your project directory if you have VSCode’s command-line tools installed.</p></li>
+</ul>
+</li>
+<li><p><strong>Open the Command Palette</strong>:</p>
+<ul class="simple">
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code> (Windows/Linux) or <code class="docutils literal notranslate"><span class="pre">Cmd+Shift+P</span></code> (Mac) to open the Command Palette in VSCode.</p></li>
+</ul>
+</li>
+<li><p><strong>Run the Command</strong>:</p>
+<ul class="simple">
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">Jupyter:</span> <span class="pre">Select</span> <span class="pre">Interpreter</span> <span class="pre">to</span> <span class="pre">start</span> <span class="pre">Jupyter</span> <span class="pre">server</span></code> in the Command Palette and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p></li>
+<li><p>This will allow you to select the Python interpreter associated with your virtual environment (e.g., <code class="docutils literal notranslate"><span class="pre">/Users/apollo/documents/athena/myenv/bin/python</span></code>).</p></li>
+</ul>
+</li>
 </ol>
-<p>That’s all that is needed to get started!</p>
 </section>
-<section id="quickly-add-yaml-metadata-for-myst-notebooks">
-<h2>Quickly add YAML metadata for MyST Notebooks<a class="headerlink" href="#quickly-add-yaml-metadata-for-myst-notebooks" title="Link to this heading">#</a></h2>
-<p>If you have a markdown file and you’d like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">myst</span> <span class="n">init</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">markdownfile</span><span class="o">.</span><span class="n">md</span>
+<section id="additional-steps-if-needed">
+<h1>Additional Steps if Needed<a class="headerlink" href="#additional-steps-if-needed" title="Link to this heading">#</a></h1>
+<section id="step-1-verify-jupyter-extension-is-installed">
+<h2>Step 1: Verify Jupyter Extension is Installed<a class="headerlink" href="#step-1-verify-jupyter-extension-is-installed" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Go to the Extensions view</strong>:</p>
+<ul class="simple">
+<li><p>Click the Extensions icon in the Activity Bar on the side of the window or press <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+X</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Search for “Jupyter”</strong>:</p>
+<ul class="simple">
+<li><p>Ensure that the Jupyter extension by Microsoft is installed. If not, install it.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="step-2-select-jupyter-kernel">
+<h2>Step 2: Select Jupyter Kernel<a class="headerlink" href="#step-2-select-jupyter-kernel" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Open or Create a Jupyter Notebook</strong>:</p>
+<ul class="simple">
+<li><p>Open an existing <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file or create a new one in VSCode.</p></li>
+</ul>
+</li>
+<li><p><strong>Select the Kernel</strong>:</p>
+<ul class="simple">
+<li><p>Click on the kernel name (e.g., “Python 3”) at the top right corner of the notebook interface.</p></li>
+<li><p>A dropdown menu should appear. Select the <code class="docutils literal notranslate"><span class="pre">R</span></code> kernel from this list. If it does not appear, try restarting VSCode.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="step-3-restart-jupyter-server">
+<h2>Step 3: Restart Jupyter Server<a class="headerlink" href="#step-3-restart-jupyter-server" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Open the Command Palette</strong>:</p>
+<ul class="simple">
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code> (Windows/Linux) or <code class="docutils literal notranslate"><span class="pre">Cmd+Shift+P</span></code> (Mac).</p></li>
+</ul>
+</li>
+<li><p><strong>Run the Command</strong>:</p>
+<ul class="simple">
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">Jupyter:</span> <span class="pre">Restart</span> <span class="pre">Jupyter</span> <span class="pre">server</span></code> and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="recap-of-key-commands">
+<h1>Recap of Key Commands<a class="headerlink" href="#recap-of-key-commands" title="Link to this heading">#</a></h1>
+<ol class="arabic">
+<li><p><strong>Open Command Palette in VSCode</strong>:</p>
+<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>Ctrl+Shift+P (Windows/Linux) or Cmd+Shift+P (Mac)
 </pre></div>
 </div>
-</section>
+</li>
+<li><p><strong>Select Interpreter for Jupyter Server</strong>:</p>
+<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>Jupyter: Select Interpreter to start Jupyter server
+</pre></div>
+</div>
+</li>
+<li><p><strong>Restart Jupyter Server</strong>:</p>
+<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>Jupyter: Restart Jupyter server
+</pre></div>
+</div>
+</li>
+</ol>
+<p>These steps should help you correctly configure VSCode to recognize and use the R kernel in your Jupyter Notebooks. If you encounter any issues, please let me know.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -472,7 +527,7 @@ See the YAML at the top of this page for example.</p></li>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Content with notebooks</p>
+        <p class="prev-next-title">Kernel</p>
       </div>
     </a>
 </div>
@@ -491,10 +546,16 @@ See the YAML at the top of this page for example.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-cell">An example cell</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">Create a notebook with MyST Markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Step-by-Step Instructions for VSCode</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-steps-if-needed">Additional Steps if Needed</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-verify-jupyter-extension-is-installed">Step 1: Verify Jupyter Extension is Installed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-select-jupyter-kernel">Step 2: Select Jupyter Kernel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-restart-jupyter-server">Step 3: Restart Jupyter Server</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-of-key-commands">Recap of Key Commands</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>
@@ -508,7 +569,7 @@ See the YAML at the top of this page for example.</p></li>
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By ADM
 </p>
 
   </div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Markdown Files &#8212; My sample book</title>
+    <title>Summary of Steps &#8212; R</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'markdown';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Content with notebooks" href="notebooks.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <link rel="next" title="Kernel" href="notebooks.html" />
+    <link rel="prev" title="R" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -151,8 +151,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="https://www.r-project.org/logo/Rlogo.png" class="logo__image only-light" alt="R - Home"/>
+    <script>document.write(`<img src="https://www.r-project.org/logo/Rlogo.png" class="logo__image only-dark" alt="R - Home"/>`);</script>
   
   
 </a></div>
@@ -173,14 +173,17 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    R
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Summary of Steps</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Step-by-Step Instructions for VSCode</a></li>
+
+
 </ul>
 
     </div>
@@ -366,7 +369,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Markdown Files</h1>
+    <h1>Summary of Steps</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -376,11 +379,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Summary of Steps</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-commands">Step-by-Step Commands</a></li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -391,60 +393,125 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
-<h1>Markdown Files<a class="headerlink" href="#markdown-files" title="Link to this heading">#</a></h1>
-<p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
-in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
-called <strong>MyST Markdown</strong>.
-This is a simple file to help you get started and show off some syntax.</p>
-<section id="what-is-myst">
-<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Link to this heading">#</a></h2>
-<p>MyST stands for “Markedly Structured Text”. It
-is a slight variation on a flavor of markdown called “CommonMark” markdown,
-with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
-in the Sphinx ecosystem.</p>
-<p>For more about MyST, see <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST Markdown Overview</a>.</p>
-</section>
-<section id="sample-roles-and-directives">
-<h2>Sample Roles and Directives<a class="headerlink" href="#sample-roles-and-directives" title="Link to this heading">#</a></h2>
-<p>Roles and directives are two of the most powerful tools in Jupyter Book. They
-are like functions, but written in a markup language. They both
-serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
-<strong>directives span many lines</strong>. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.</p>
-<p>Here is a “note” directive:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note</p>
+  <p>Here’s a summary of the steps to configure the R kernel in VSCode on your MacBook Pro for easy reproducibility:</p>
+<section id="summary-of-steps">
+<h1>Summary of Steps<a class="headerlink" href="#summary-of-steps" title="Link to this heading">#</a></h1>
+<ol class="arabic">
+<li><p><strong>Install Prerequisites</strong></p>
+<ul class="simple">
+<li><p>Install Python 3 (if not already installed).</p></li>
+<li><p>Install R from <a class="reference external" href="https://cran.r-project.org/mirrors.html">CRAN</a>.</p></li>
+</ul>
+</li>
+<li><p><strong>Set Up a Virtual Environment</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>~/documents/athena/myenv
+<span class="nb">source</span><span class="w"> </span>~/documents/athena/myenv/bin/activate
+</pre></div>
 </div>
-<p>It will be rendered in a special box when you build your book.</p>
-<p>Here is an inline directive to refer to a document: <a class="reference internal" href="markdown-notebooks.html"><span class="doc">Notebooks with MyST Markdown</span></a>.</p>
-</section>
-<section id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Link to this heading">#</a></h2>
-<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
-the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id1">[<a class="reference internal" href="#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">HdHPK14</a>]</span>.</p>
-<p>Moreover, you can insert a bibliography into your page with this syntax:
-The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
-render properly.
-For example, if the references for your book are stored in <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>,
-then the bibliography is inserted with:</p>
-<div class="docutils container" id="id2">
-<div role="list" class="citation-list">
-<div class="citation" id="id3" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">HdHPK14</a><span class="fn-bracket">]</span></span>
-<p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
+</li>
+<li><p><strong>Install Jupyter and IRKernel</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>jupyter<span class="w"> </span>jupyter-client
+R<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;install.packages(&#39;IRkernel&#39;); IRkernel::installspec(user = TRUE)&quot;</span>
+</pre></div>
 </div>
+</li>
+<li><p><strong>Ensure R is in the PATH</strong></p>
+<ul class="simple">
+<li><p>Add R to your PATH in your <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code>:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=/usr/local/bin:$PATH&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="nb">source</span><span class="w"> </span>~/.zshrc
+</pre></div>
 </div>
+</li>
+<li><p><strong>Verify Kernel Installation</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>kernelspec<span class="w"> </span>list
+</pre></div>
 </div>
+</li>
+<li><p><strong>Install VSCode Extensions</strong></p>
+<ul class="simple">
+<li><p>Install the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter">Jupyter Extension</a>.</p></li>
+<li><p>Optionally, install the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=REditorSupport.r">R Extension for Visual Studio Code</a>.</p></li>
+</ul>
+</li>
+<li><p><strong>Configure VSCode to Use the Jupyter Server</strong></p>
+<ul class="simple">
+<li><p>Open VSCode.</p></li>
+<li><p>Open the Command Palette (<code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code> or <code class="docutils literal notranslate"><span class="pre">Cmd+Shift+P</span></code>).</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">Jupyter:</span> <span class="pre">Select</span> <span class="pre">Interpreter</span> <span class="pre">to</span> <span class="pre">start</span> <span class="pre">Jupyter</span> <span class="pre">server</span></code> and select the Python interpreter from your virtual environment.</p></li>
+</ul>
+</li>
+<li><p><strong>Open or Create a Jupyter Notebook</strong></p>
+<ul class="simple">
+<li><p>Open an existing <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file or create a new one.</p></li>
+</ul>
+</li>
+<li><p><strong>Select the R Kernel</strong></p>
+<ul class="simple">
+<li><p>Click on the kernel name at the top right corner of the notebook interface.</p></li>
+<li><p>Select the <code class="docutils literal notranslate"><span class="pre">R</span></code> kernel from the dropdown menu.</p></li>
+</ul>
+</li>
+</ol>
 </section>
-<section id="learn-more">
-<h2>Learn more<a class="headerlink" href="#learn-more" title="Link to this heading">#</a></h2>
-<p>This is just a simple starter to get you started.
-You can learn a lot more at <a class="reference external" href="https://jupyterbook.org">jupyterbook.org</a>.</p>
-</section>
+<section id="step-by-step-commands">
+<h1>Step-by-Step Commands<a class="headerlink" href="#step-by-step-commands" title="Link to this heading">#</a></h1>
+<ol class="arabic">
+<li><p><strong>Install Python 3 and R (if not already installed)</strong>:</p>
+<ul class="simple">
+<li><p>Follow the installation instructions for Python 3 and R on your MacBook Pro.</p></li>
+</ul>
+</li>
+<li><p><strong>Set Up Virtual Environment</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>~/documents/athena/myenv
+<span class="nb">source</span><span class="w"> </span>~/documents/athena/myenv/bin/activate
+</pre></div>
+</div>
+</li>
+<li><p><strong>Install Jupyter and IRKernel</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>jupyter<span class="w"> </span>jupyter-client
+R<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;install.packages(&#39;IRkernel&#39;); IRkernel::installspec(user = TRUE)&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Add R to PATH</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=/usr/local/bin:$PATH&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="nb">source</span><span class="w"> </span>~/.zshrc
+</pre></div>
+</div>
+</li>
+<li><p><strong>Verify Kernel Installation</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>kernelspec<span class="w"> </span>list
+</pre></div>
+</div>
+</li>
+<li><p><strong>Install VSCode Extensions</strong>:</p>
+<ul class="simple">
+<li><p>Open the Extensions view in VSCode (<code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+X</span></code> or <code class="docutils literal notranslate"><span class="pre">Cmd+Shift+X</span></code>).</p></li>
+<li><p>Install the Jupyter Extension.</p></li>
+<li><p>Optionally, install the R Extension.</p></li>
+</ul>
+</li>
+<li><p><strong>Configure Jupyter Server in VSCode</strong>:</p>
+<ul class="simple">
+<li><p>Open the Command Palette (<code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code> or <code class="docutils literal notranslate"><span class="pre">Cmd+Shift+P</span></code>).</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">Jupyter:</span> <span class="pre">Select</span> <span class="pre">Interpreter</span> <span class="pre">to</span> <span class="pre">start</span> <span class="pre">Jupyter</span> <span class="pre">server</span></code> and select the Python interpreter from your virtual environment.</p></li>
+</ul>
+</li>
+<li><p><strong>Open or Create a Jupyter Notebook</strong>:</p>
+<ul class="simple">
+<li><p>Open an existing <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file or create a new one in VSCode.</p></li>
+</ul>
+</li>
+<li><p><strong>Select the R Kernel</strong>:</p>
+<ul class="simple">
+<li><p>Click on the kernel name at the top right corner of the notebook interface.</p></li>
+<li><p>Select the <code class="docutils literal notranslate"><span class="pre">R</span></code> kernel from the dropdown menu.</p></li>
+</ul>
+</li>
+</ol>
+<p>By following these summarized steps, you should be able to replicate the setup on your MacBook Pro successfully. If you encounter any issues or need further assistance, please let me know.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -483,7 +550,7 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+        <p class="prev-next-title">R</p>
       </div>
     </a>
     <a class="right-next"
@@ -491,7 +558,7 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Content with notebooks</p>
+        <p class="prev-next-title">Kernel</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -511,11 +578,10 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Summary of Steps</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-commands">Step-by-Step Commands</a></li>
 </ul>
+
   </nav></div>
 
 </div></div>
@@ -529,7 +595,7 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By ADM
 </p>
 
   </div>
