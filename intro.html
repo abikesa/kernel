@@ -384,9 +384,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">R</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-instructions">Step-by-Step Instructions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-commands">Summary of Commands</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-stata-r-kernel-sh"><code class="docutils literal notranslate"><span class="pre">./setup_stata_r_kernel.sh</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-script-for-setting-up-stata-and-r-kernels-in-jupyter-notebook">Complete Script for Setting Up Stata and R Kernels in Jupyter Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-to-use-the-script">Instructions to Use the Script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-explanation">Detailed Explanation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">R</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bash">Bash</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -401,6 +413,10 @@ document.write(`
 <h1>R<a class="headerlink" href="#r" title="Link to this heading">#</a></h1>
 <iframe src="https://www.youtube.com/embed/MG1lZhixbS4" width="100%" height="200px"></iframe>
 <p>It looks like the <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> command is being run inside the R session, which won’t work. The <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">kernelspec</span> <span class="pre">list</span></code> command should be run in your terminal, not within the R console.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>jupyter-book
+pip<span class="w"> </span>install<span class="w"> </span>ghp-import
+</pre></div>
+</div>
 <section id="step-by-step-instructions">
 <h2>Step-by-Step Instructions<a class="headerlink" href="#step-by-step-instructions" title="Link to this heading">#</a></h2>
 <ol class="arabic">
@@ -450,7 +466,127 @@ document.write(`
 </div>
 </li>
 </ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="setup-stata-r-kernel-sh">
+<h1><code class="docutils literal notranslate"><span class="pre">./setup_stata_r_kernel.sh</span></code><a class="headerlink" href="#setup-stata-r-kernel-sh" title="Link to this heading">#</a></h1>
+<p>Yes, the provided script is designed to set up both Stata and R kernels for Jupyter Notebooks. It will configure the environment, install necessary packages, and start the Jupyter server. Here’s an updated and more detailed version of the script to ensure everything is set up correctly for both Stata and R:</p>
+<section id="complete-script-for-setting-up-stata-and-r-kernels-in-jupyter-notebook">
+<h2>Complete Script for Setting Up Stata and R Kernels in Jupyter Notebook<a class="headerlink" href="#complete-script-for-setting-up-stata-and-r-kernels-in-jupyter-notebook" title="Link to this heading">#</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># Set up variables</span>
+<span class="nv">VENV_PATH</span><span class="o">=</span><span class="s2">&quot;/Users/hades/Documents/hades/myenv&quot;</span>
+<span class="nv">STATA_PATH</span><span class="o">=</span><span class="s2">&quot;/Applications/Stata/StataMP.app/Contents/MacOS/stata-mp&quot;</span>
+<span class="nv">ZSHRC_PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.zshrc&quot;</span>
+
+<span class="c1"># Step 1: Remove existing virtual environment if it exists</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Removing existing virtual environment...&quot;</span>
+rm<span class="w"> </span>-rf<span class="w"> </span><span class="nv">$VENV_PATH</span>
+
+<span class="c1"># Step 2: Create a new virtual environment</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Creating a new virtual environment...&quot;</span>
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span><span class="nv">$VENV_PATH</span>
+
+<span class="c1"># Step 3: Activate the virtual environment</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Activating the virtual environment...&quot;</span>
+<span class="nb">source</span><span class="w"> </span><span class="nv">$VENV_PATH</span>/bin/activate
+
+<span class="c1"># Step 4: Install necessary packages for Python</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Installing necessary packages for Python...&quot;</span>
+pip<span class="w"> </span>install<span class="w"> </span>stata_kernel<span class="w"> </span>ipykernel<span class="w"> </span>setuptools<span class="w"> </span>notebook
+
+<span class="c1"># Step 5: Configure environment variable for Stata path</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Configuring environment variable for Stata path...&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span><span class="nv">$ZSHRC_PATH</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>touch<span class="w"> </span><span class="nv">$ZSHRC_PATH</span>
+<span class="k">fi</span>
+grep<span class="w"> </span>-qxF<span class="w"> </span><span class="s2">&quot;export STATA_KERNEL_STATA_PATH=</span><span class="nv">$STATA_PATH</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">$ZSHRC_PATH</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export STATA_KERNEL_STATA_PATH=</span><span class="nv">$STATA_PATH</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$ZSHRC_PATH</span>
+<span class="nb">source</span><span class="w"> </span><span class="nv">$ZSHRC_PATH</span>
+
+<span class="c1"># Step 6: Install the Stata kernel</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Installing the Stata kernel...&quot;</span>
+python<span class="w"> </span>-m<span class="w"> </span>stata_kernel.install
+
+<span class="c1"># Step 7: Install IRkernel for R</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Installing IRkernel for R...&quot;</span>
+Rscript<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;install.packages(&#39;IRkernel&#39;)&quot;</span>
+Rscript<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;IRkernel::installspec(user = FALSE)&quot;</span>
+
+<span class="c1"># Step 8: Start Jupyter Notebook and keep it running in the background</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Starting Jupyter Notebook...&quot;</span>
+nohup<span class="w"> </span>jupyter<span class="w"> </span>notebook<span class="w"> </span>&gt;<span class="w"> </span>jupyter.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">&amp;</span>
+
+<span class="c1"># Step 9: Provide the Jupyter server URL for VSCode connection</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;To connect to the Jupyter server in VSCode, use one of the following URLs:&quot;</span>
+<span class="nv">JUPYTER_URL</span><span class="o">=</span><span class="k">$(</span>grep<span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;http://127.0.0.1:8888/.*&#39;</span><span class="w"> </span>jupyter.log<span class="k">)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$JUPYTER_URL</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Setup complete! You can now connect to the Jupyter server from VSCode using the URL provided.&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="instructions-to-use-the-script">
+<h2>Instructions to Use the Script<a class="headerlink" href="#instructions-to-use-the-script" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Save the Script</strong>:</p>
+<ul class="simple">
+<li><p>Save the script to a file, for example, <code class="docutils literal notranslate"><span class="pre">setup_stata_r_kernel.sh</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Make the Script Executable</strong>:</p>
+<ul class="simple">
+<li><p>Make the script executable by running the following command:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>+x<span class="w"> </span>setup_stata_r_kernel.sh
+</pre></div>
+</div>
+</li>
+<li><p><strong>Run the Script</strong>:</p>
+<ul class="simple">
+<li><p>Run the script by executing:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./setup_stata_r_kernel.sh
+</pre></div>
+</div>
+</li>
+<li><p><strong>Connect VSCode to the Jupyter Server</strong>:</p>
+<ul class="simple">
+<li><p>Follow the URL provided at the end of the script to connect VSCode to the Jupyter server.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="detailed-explanation">
+<h2>Detailed Explanation<a class="headerlink" href="#detailed-explanation" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Step 1</strong>: The script removes any existing virtual environment to ensure a fresh setup.</p></li>
+<li><p><strong>Step 2</strong>: A new virtual environment is created.</p></li>
+<li><p><strong>Step 3</strong>: The virtual environment is activated.</p></li>
+<li><p><strong>Step 4</strong>: Necessary Python packages (<code class="docutils literal notranslate"><span class="pre">stata_kernel</span></code>, <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code>, <code class="docutils literal notranslate"><span class="pre">setuptools</span></code>, <code class="docutils literal notranslate"><span class="pre">notebook</span></code>) are installed.</p></li>
+<li><p><strong>Step 5</strong>: The environment variable for the Stata path is set up.</p></li>
+<li><p><strong>Step 6</strong>: The Stata kernel is installed.</p></li>
+<li><p><strong>Step 7</strong>: The IRkernel for R is installed.</p></li>
+<li><p><strong>Step 8</strong>: The Jupyter Notebook server is started in the background, and its output is redirected to <code class="docutils literal notranslate"><span class="pre">jupyter.log</span></code>.</p></li>
+<li><p><strong>Step 9</strong>: The script extracts the Jupyter server URL from the log file and prints it, so you can easily connect to it from VSCode.</p></li>
+</ul>
+<p>By following these steps, you can ensure that the setup is reproducible and that you can work seamlessly with both Stata and R kernels in Jupyter Notebooks within VSCode.</p>
 <p>This should resolve your issue and confirm that the R kernel is registered and available in Jupyter.</p>
+</section>
+<section id="id1">
+<h2>R<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;IRkernel&#39;</span><span class="p">)</span>
+<span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="n">source</span><span class="w"> </span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">hades</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">hades</span><span class="o">/</span><span class="n">myenv</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</div>
+</section>
+<section id="bash">
+<h2>Bash<a class="headerlink" href="#bash" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start R in the activated virtual environment</span>
+R
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Summary of Steps</a></li>
@@ -521,9 +657,21 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">R</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-instructions">Step-by-Step Instructions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-commands">Summary of Commands</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-stata-r-kernel-sh"><code class="docutils literal notranslate"><span class="pre">./setup_stata_r_kernel.sh</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-script-for-setting-up-stata-and-r-kernels-in-jupyter-notebook">Complete Script for Setting Up Stata and R Kernels in Jupyter Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-to-use-the-script">Instructions to Use the Script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-explanation">Detailed Explanation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">R</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bash">Bash</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
