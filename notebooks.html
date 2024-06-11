@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -380,7 +382,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-ensure-r-is-installed-and-accessible">Step 1: Ensure R is Installed and Accessible</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-add-r-to-the-path">Step 2: Add R to the PATH</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-add-r-to-the-path">Step 2: Add R to the PATH`</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-register-the-irkernel-again">Step 3: Register the IRKernel Again</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-kernel-registration">Verify Kernel Registration</a></li>
 </ul>
@@ -394,7 +396,101 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="kernel">
+  <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install necessary packages if not already installed</span>
+<span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">requireNamespace</span><span class="p">(</span><span class="s">&quot;IRkernel&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">quietly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;IRkernel&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;http://cran.us.r-project.org&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">requireNamespace</span><span class="p">(</span><span class="s">&quot;ggplot2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">quietly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggplot2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;http://cran.us.r-project.org&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">requireNamespace</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">quietly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;http://cran.us.r-project.org&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1"># Load libraries</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="c1"># Print a simple message</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">&quot;Hello, Jupyter!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a simple data frame</span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">),</span>
+<span class="w">  </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Display the first few rows of the data frame</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Create a simple plot</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Scatter Plot of Random Data&quot;</span><span class="p">)</span>
+
+<span class="c1"># Perform a simple calculation</span>
+<span class="n">mean_x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">x</span><span class="p">)</span>
+<span class="n">mean_y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Print the results</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Mean of x:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mean_x</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Mean of y:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mean_y</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘dplyr’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:stats’:
+
+    filter, lag
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Hello, Jupyter!&quot;
+</pre></div>
+</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 6 × 2</caption>
+<thead>
+	<tr><th></th><th scope=col>x</th><th scope=col>y</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>-0.09820149</td><td>-3.1752052</td></tr>
+	<tr><th scope=row>2</th><td> 0.40557746</td><td>-0.3088841</td></tr>
+	<tr><th scope=row>3</th><td> 1.31831206</td><td> 2.0887356</td></tr>
+	<tr><th scope=row>4</th><td>-0.59162424</td><td> 0.8370672</td></tr>
+	<tr><th scope=row>5</th><td> 0.86111629</td><td> 0.7655389</td></tr>
+	<tr><th scope=row>6</th><td> 1.24846705</td><td>-1.4135021</td></tr>
+</tbody>
+</table>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean of x: 0.1375333 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean of y: 0.1289085 
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/7f88edf69d9afab3170b3f3727d6315de1460975c9ce94983184a15ec40a1001.png"><img alt="_images/7f88edf69d9afab3170b3f3727d6315de1460975c9ce94983184a15ec40a1001.png" src="_images/7f88edf69d9afab3170b3f3727d6315de1460975c9ce94983184a15ec40a1001.png" style="width: 420px; height: 420px;" /></a>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="kernel">
 <h1>Kernel<a class="headerlink" href="#kernel" title="Link to this heading">#</a></h1>
 <p>The issue seems to be that R is not found in your current PATH, which is necessary for running R from the terminal. This might be because R is not installed in the virtual environment or the path to the system-wide R installation is not included in your PATH.</p>
 <p>Here are the steps to resolve this:</p>
@@ -415,7 +511,7 @@ document.write(`
 </ol>
 </section>
 <section id="step-2-add-r-to-the-path">
-<h2>Step 2: Add R to the PATH<a class="headerlink" href="#step-2-add-r-to-the-path" title="Link to this heading">#</a></h2>
+<h2>Step 2: Add R to the PATH`<a class="headerlink" href="#step-2-add-r-to-the-path" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p><strong>Find the path to the R executable</strong>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which<span class="w"> </span>R
@@ -424,7 +520,7 @@ document.write(`
 <p>Assume it returns <code class="docutils literal notranslate"><span class="pre">/usr/local/bin/R</span></code>.</p>
 </li>
 <li><p><strong>Add the R path to your PATH environment variable</strong>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:<span class="nv">$PATH</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/bin:<span class="nv">$PATH</span><span class="sb">`</span>
 </pre></div>
 </div>
 </li>
@@ -543,7 +639,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-ensure-r-is-installed-and-accessible">Step 1: Ensure R is Installed and Accessible</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-add-r-to-the-path">Step 2: Add R to the PATH</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-add-r-to-the-path">Step 2: Add R to the PATH`</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-register-the-irkernel-again">Step 3: Register the IRKernel Again</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-kernel-registration">Verify Kernel Registration</a></li>
 </ul>
