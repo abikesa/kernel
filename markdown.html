@@ -180,8 +180,10 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Summary of Steps</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Kernel</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Step-by-Step Instructions for VSCode</a></li>
+
 
 
 </ul>
@@ -381,6 +383,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Summary of Steps</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-commands">Step-by-Step Commands</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rhistory">.Rhistory</a></li>
 </ul>
 
             </nav>
@@ -513,6 +516,35 @@ R<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;instal
 </ol>
 <p>By following these summarized steps, you should be able to replicate the setup on your MacBook Pro successfully. If you encounter any issues or need further assistance, please let me know.</p>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="rhistory">
+<h1>.Rhistory<a class="headerlink" href="#rhistory" title="Link to this heading">#</a></h1>
+<p>When you save a session after <code class="docutils literal notranslate"><span class="pre">q()</span></code></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;IRkernel&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;IRkernel&quot;</span><span class="p">)</span>
+<span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">JUPYTER_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/Users/apollo/Documents/Athena/myenv/bin/jupyter&quot;</span><span class="p">)</span>
+<span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;PATH&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;/Users/apollo/Documents/Athena/myenv/bin&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;:&quot;</span><span class="p">))</span>
+<span class="nf">system2</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;JUPYTER_PATH&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;kernelspec&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;list&quot;</span><span class="p">))</span>
+<span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">()</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;IRkernel&quot;</span><span class="p">)</span>
+<span class="nf">q</span><span class="p">()</span>
+<span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">JUPYTER_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/Users/apollo/Documents/Athena/myenv/bin/jupyter&quot;</span><span class="p">)</span>
+<span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;PATH&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;/Users/apollo/Documents/Athena/myenv/bin&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;:&quot;</span><span class="p">))</span>
+<span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;JUPYTER_PATH&quot;</span><span class="p">)</span>
+<span class="nf">system2</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;JUPYTER_PATH&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;kernelspec&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;list&quot;</span><span class="p">))</span>
+<span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">()</span>
+<span class="nf">q</span><span class="p">()</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;IRkernel&quot;</span><span class="p">)</span>
+<span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">  </span><span class="c1"># Use user = FALSE to install system-wide if necessary</span>
+<span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">  </span><span class="c1"># Use user = FALSE to install system-wide if necessary</span>
+<span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">JUPYTER_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/Users/apollo/Documents/Athena/myenv/bin/jupyter&quot;</span><span class="p">)</span>
+<span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;PATH&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;/Users/apollo/Documents/Athena/myenv/bin&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;:&quot;</span><span class="p">))</span>
+<span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;JUPYTER_PATH&quot;</span><span class="p">)</span>
+<span class="nf">system2</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;JUPYTER_PATH&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;kernelspec&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;list&quot;</span><span class="p">))</span>
+<span class="n">jupyter</span><span class="w"> </span><span class="n">notebook</span>
+<span class="nf">q</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -580,6 +612,7 @@ R<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;instal
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Summary of Steps</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-commands">Step-by-Step Commands</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rhistory">.Rhistory</a></li>
 </ul>
 
   </nav></div>
