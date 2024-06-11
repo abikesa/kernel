@@ -6,7 +6,7 @@ It looks like the `jupyter` command is being run inside the R session, which won
 
 ```bash
 pip install jupyter-book
-
+pip install ghp-import
 ```
 
 ### Step-by-Step Instructions
