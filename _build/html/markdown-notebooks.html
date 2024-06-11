@@ -179,8 +179,10 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Summary of Steps</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Kernel</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Step-by-Step Instructions for VSCode</a></li>
+
 
 
 </ul>
@@ -386,6 +388,20 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-of-key-commands">Recap of Key Commands</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#final-take">Final Take</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-guide-to-set-up-r-with-irkernel-in-jupyter-notebooks">Step-by-Step Guide to Set Up R with IRkernel in Jupyter Notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-homebrew-if-not-already-installed">Step 1: Install Homebrew (if not already installed)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-install-python-and-jupyter">Step 2: Install Python and Jupyter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-set-up-a-virtual-environment">Step 3: Set Up a Virtual Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-install-r-and-rstudio">Step 4: Install R and RStudio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-install-irkernel-in-r">Step 5: Install IRkernel in R</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-configure-jupyter-to-use-irkernel">Step 6: Configure Jupyter to Use IRkernel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-test-the-setup">Step 7: Test the Setup</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -490,6 +506,164 @@ document.write(`
 </ol>
 <p>These steps should help you correctly configure VSCode to recognize and use the R kernel in your Jupyter Notebooks. If you encounter any issues, please let me know.</p>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="final-take">
+<h1>Final Take<a class="headerlink" href="#final-take" title="Link to this heading">#</a></h1>
+<p>I understand the need for a clear and concise setup process. Here’s a tidy step-by-step guide to setting up R with IRkernel in Jupyter Notebooks on your new MacBook Pro. This guide assumes that your MacBook Pro is already set up for <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code>.</p>
+<section id="step-by-step-guide-to-set-up-r-with-irkernel-in-jupyter-notebooks">
+<h2>Step-by-Step Guide to Set Up R with IRkernel in Jupyter Notebooks<a class="headerlink" href="#step-by-step-guide-to-set-up-r-with-irkernel-in-jupyter-notebooks" title="Link to this heading">#</a></h2>
+<section id="step-1-install-homebrew-if-not-already-installed">
+<h3>Step 1: Install Homebrew (if not already installed)<a class="headerlink" href="#step-1-install-homebrew-if-not-already-installed" title="Link to this heading">#</a></h3>
+<p>Homebrew is a package manager for macOS that simplifies the installation of software.</p>
+<ol class="arabic">
+<li><p><strong>Open Terminal</strong>:</p></li>
+<li><p><strong>Install Homebrew</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="step-2-install-python-and-jupyter">
+<h3>Step 2: Install Python and Jupyter<a class="headerlink" href="#step-2-install-python-and-jupyter" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Install Python using Homebrew</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>python
+</pre></div>
+</div>
+</li>
+<li><p><strong>Verify Python installation</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which<span class="w"> </span>python3
+</pre></div>
+</div>
+<p>This should return a path like <code class="docutils literal notranslate"><span class="pre">/opt/homebrew/bin/python3</span></code>.</p>
+</li>
+<li><p><strong>Install virtualenv</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>virtualenv
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="step-3-set-up-a-virtual-environment">
+<h3>Step 3: Set Up a Virtual Environment<a class="headerlink" href="#step-3-set-up-a-virtual-environment" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Create a virtual environment</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>~/Documents/Athena/myenv
+</pre></div>
+</div>
+</li>
+<li><p><strong>Activate the virtual environment</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/Documents/Athena/myenv/bin/activate
+</pre></div>
+</div>
+</li>
+<li><p><strong>Install Jupyter in the virtual environment</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>jupyter
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="step-4-install-r-and-rstudio">
+<h3>Step 4: Install R and RStudio<a class="headerlink" href="#step-4-install-r-and-rstudio" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Install R using Homebrew</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>--cask<span class="w"> </span>r
+</pre></div>
+</div>
+</li>
+<li><p><strong>Download and install RStudio from the <a class="reference external" href="https://www.rstudio.com/products/rstudio/download/">official website</a></strong>.</p></li>
+</ol>
+</section>
+<section id="step-5-install-irkernel-in-r">
+<h3>Step 5: Install IRkernel in R<a class="headerlink" href="#step-5-install-irkernel-in-r" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Open RStudio</strong>.</p></li>
+<li><p><strong>Install IRkernel and other necessary packages</strong>:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;IRkernel&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggplot2&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">)</span>
+<span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">  </span><span class="c1"># Install system-wide</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="step-6-configure-jupyter-to-use-irkernel">
+<h3>Step 6: Configure Jupyter to Use IRkernel<a class="headerlink" href="#step-6-configure-jupyter-to-use-irkernel" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Set the Jupyter path and environment variables in R</strong>:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">JUPYTER_PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;~/Documents/Athena/myenv/bin/jupyter&quot;</span><span class="p">)</span>
+<span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">PATH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;PATH&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;~/Documents/Athena/myenv/bin&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;:&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Verify the Jupyter path in R</strong>:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">system2</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;JUPYTER_PATH&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;kernelspec&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;list&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Install the IRkernel spec</strong>:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="step-7-test-the-setup">
+<h3>Step 7: Test the Setup<a class="headerlink" href="#step-7-test-the-setup" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Activate the virtual environment</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/Documents/Athena/myenv/bin/activate
+</pre></div>
+</div>
+</li>
+<li><p><strong>Start Jupyter Notebook</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>notebook
+</pre></div>
+</div>
+</li>
+<li><p><strong>Create a new notebook and select the R (IRkernel) kernel</strong>.</p></li>
+<li><p><strong>Run a simple R script to ensure it works</strong>:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load necessary libraries</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="c1"># Print a simple message</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">&quot;Hello, Jupyter with IRkernel!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a simple data frame</span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span>
+<span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">),</span>
+<span class="w">  </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Display the first few rows of the data frame</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Create a simple plot</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Scatter Plot of Random Data&quot;</span><span class="p">)</span>
+
+<span class="c1"># Perform a simple calculation</span>
+<span class="n">mean_x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">x</span><span class="p">)</span>
+<span class="n">mean_y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Print the results</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Mean of x:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mean_x</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Mean of y:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mean_y</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>This guide provides a streamlined process for setting up R with IRkernel in Jupyter Notebooks on a new MacBook Pro. By following these steps, you should be able to configure your environment without any issues. If you encounter any specific errors, please provide details so I can assist further.</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -554,6 +728,20 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-of-key-commands">Recap of Key Commands</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#final-take">Final Take</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-guide-to-set-up-r-with-irkernel-in-jupyter-notebooks">Step-by-Step Guide to Set Up R with IRkernel in Jupyter Notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-homebrew-if-not-already-installed">Step 1: Install Homebrew (if not already installed)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-install-python-and-jupyter">Step 2: Install Python and Jupyter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-set-up-a-virtual-environment">Step 3: Set Up a Virtual Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-install-r-and-rstudio">Step 4: Install R and RStudio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-install-irkernel-in-r">Step 5: Install IRkernel in R</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-configure-jupyter-to-use-irkernel">Step 6: Configure Jupyter to Use IRkernel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-test-the-setup">Step 7: Test the Setup</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>

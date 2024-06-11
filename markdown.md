@@ -91,3 +91,34 @@ Here's a summary of the steps to configure the R kernel in VSCode on your MacBoo
     - Select the `R` kernel from the dropdown menu.
 
 By following these summarized steps, you should be able to replicate the setup on your MacBook Pro successfully. If you encounter any issues or need further assistance, please let me know.
+
+# .Rhistory
+
+When you save a session after `q()`
+
+```r
+install.packages("IRkernel")
+install.packages("IRkernel")
+Sys.setenv(JUPYTER_PATH = "/Users/apollo/Documents/Athena/myenv/bin/jupyter")
+Sys.setenv(PATH = paste(Sys.getenv("PATH"), "/Users/apollo/Documents/Athena/myenv/bin", sep=":"))
+system2(Sys.getenv("JUPYTER_PATH"), c("kernelspec", "list"))
+IRkernel::installspec()
+install.packages("IRkernel")
+q()
+Sys.setenv(JUPYTER_PATH = "/Users/apollo/Documents/Athena/myenv/bin/jupyter")
+Sys.setenv(PATH = paste(Sys.getenv("PATH"), "/Users/apollo/Documents/Athena/myenv/bin", sep=":"))
+Sys.getenv("JUPYTER_PATH")
+system2(Sys.getenv("JUPYTER_PATH"), c("kernelspec", "list"))
+IRkernel::installspec()
+q()
+install.packages("IRkernel")
+IRkernel::installspec(user = FALSE)  # Use user = FALSE to install system-wide if necessary
+IRkernel::installspec(user = TRUE)  # Use user = FALSE to install system-wide if necessary
+Sys.setenv(JUPYTER_PATH = "/Users/apollo/Documents/Athena/myenv/bin/jupyter")
+Sys.setenv(PATH = paste(Sys.getenv("PATH"), "/Users/apollo/Documents/Athena/myenv/bin", sep=":"))
+Sys.getenv("JUPYTER_PATH")
+system2(Sys.getenv("JUPYTER_PATH"), c("kernelspec", "list"))
+jupyter notebook
+q()
+
+```

@@ -49,4 +49,3 @@ This should resolve your issue and confirm that the R kernel is registered and a
 
 ```{tableofcontents}
 ```
-`
